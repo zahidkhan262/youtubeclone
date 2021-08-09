@@ -1,0 +1,572 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: #5a5a5a;
+}
+img{
+    cursor: pointer;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.c-center{
+    text-align: center;
+}
+
+.navigation{
+    position: fixed;
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    top: 0;
+    z-index: 10;
+}
+.left-side .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo ion-icon{
+    font-size: 1.8em;
+    color: #5a5a5a;
+    margin-right: 5px;
+}
+.logo img{
+    width: 80px;
+    height: 40px;
+}
+.middle-side .searchbar{
+    /* border: 1px solid rgba(190, 190, 190, 0.8); */
+    margin-right: 15px;
+    padding: 7px 12px;
+}
+.middle-side .searchbar input{
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+    border: 1px solid rgba(190, 190, 190, 0.8);
+    width: 500px;
+    outline: none;
+    background: transparent;
+    padding: 7px 12px;
+    font-size: 0.9em;
+    color: #5a5a5a;
+}
+.middle-side .searchbar input:focus{
+    border: 2px solid rgb(119, 146, 228);
+}
+.middle-side .search{
+    position: relative;
+    border: 1px solid rgba(190, 190, 190, 0.8);
+    color: #5a5a5a;
+    padding: 6.5px 25px;
+    font-weight: bold;
+    background: rgba(236, 236, 236, 0.452);
+}
+.middle-side .search:hover{
+    background: rgba(228, 228, 228, 0.712);
+}
+.middle-side .voice:hover{
+    background: rgba(228, 228, 228, 0.712);
+    color: #5a5a5a;
+}
+.middle-side .voice{
+    font-size: 1.2em;
+    position: relative;
+    border: 1px solid #e6d9d9;
+    margin-left: 8px;
+    color: #5a5a5a;
+    padding: 5px;
+    border-radius: 50%;
+    background: rgb(255, 249, 249);
+}
+.right-side img{
+    width: 25px;
+    margin-right: 20px;
+}
+.right-side .user-icon{
+    width: 35px;
+    height: 30px;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+/*  sticky navbar */
+
+.navigation.sticky{
+    width: 100%;
+    background: rgb(255, 253, 253);
+}
+
+/* ---------siderbar------------- */
+
+.sidebar{
+    position: fixed;
+    /* overflow-x: hidden; */
+    background: rgba(248, 245, 245, 0.997);
+    width: 0;
+    height: 100vh;
+    top: 0;
+    padding-left: 20px;
+    padding-top: 80px;
+    scroll-behavior: auto;
+    overflow-x: scroll;
+    transition: width 0.7s;
+}
+.navigation.active{
+    background: #c0bebe;
+}
+.sidebar.active{
+    width: 15%;
+}
+.sidebar::-webkit-scrollbar{
+    width: 6px;
+    height: 20px;
+    overflow-y: hidden;
+}
+.sidebar:hover::-webkit-scrollbar-thumb{
+    background: #c0bebe;
+}
+.sidebar hr{
+    height: 1px;
+    color: #5a5a5a;
+    width: 90%;
+    left: -20px;
+    position: relative;
+}
+.menu-links a{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    width: fit-content;
+    flex-wrap: wrap;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+    padding: 5px 2px;
+    transition: all .3s ease;
+}
+.menu-links a:nth-child(odd):hover{
+    background: #c0bebe;
+    width: 100%;
+}
+.menu-links a:nth-child(even):hover{
+    background: #e2dcdc;
+    width: 100%;
+}
+
+.menu-links a:first-child{
+    color: crimson;
+}
+.menu-links a img{
+    width: 20px;
+    margin-right: 20px;
+}
+
+.subscribed-list h3{
+    font-size: 1.1em;
+    margin: 20px auto;
+    text-transform: capitalize;
+}
+.subscribed-list a img{
+    width: 35px;
+    border-radius: 50%;
+    margin-right: 20px;
+    padding: 5px;
+}
+.subscribed-list a{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    width: fit-content;
+    transition: all .3s ease;
+}
+.subscribed-list a:nth-child(odd):hover{
+    background: #c0bebe;
+    width: 100%;
+}
+.subscribed-list a:nth-child(even):hover{
+    background: #e2dcdc;
+    width: 100%;
+}
+/* main */
+
+.container{
+    padding-left: 2%;
+    padding-right: 10px;
+    margin: 80px auto;
+    transition: width 0.3s;
+}
+.large-container{
+    padding-left: 15%;
+    transition: width 0.3s;
+}
+.wrapper{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.cards{
+    flex-basis: 12%;
+    min-width: 250px;
+    margin-bottom: 20px;
+    transition: 0.2s ease-in-out;
+}
+.cards img{
+    width: 100%;
+}
+.cards-icon{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cards img:hover{
+    opacity: 0.8;
+    transform: scale(1.001);
+}
+.cards-icon img{
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.cards-icon h3{
+    font-size: 1em;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+}
+.cards-icon ion-icon{
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #000;
+    opacity: 0;
+}
+.cards:hover ion-icon{
+   opacity: 1;
+}
+.writer{
+    position: relative;
+    left: 10px;
+    margin: 0 auto;
+}
+.writer h3{
+    font-size: 1em;
+    color: rgb(43, 41, 41);
+    font-weight: 400;
+    text-align: left;
+}
+.writer p{
+    font-size: 0.9em;
+    color: #8a8787;
+    font-weight: 400;
+    text-align: left;
+    padding-left: 40px;
+}
+
+/* index--222222222222222 */
+
+
+.video-container{
+    margin: 80px auto;
+    width: 100%;
+
+}
+.video{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.large-video{
+    flex-basis: 68%;
+    min-width: 330px;
+}
+.small-video img:hover{
+    opacity: 0.9;
+    transform: scale(1.001);
+}
+.large-video video{
+    width: 100%;
+}
+.small-video{
+    flex-basis: 30%;
+    min-width: 300px;
+}
+.small-video .right-flex{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+.right-flex .thumbnails{
+    flex-basis: 49%;
+    width: 100%;
+}
+.right-flex .content{
+    flex-basis: 49%;
+    width: 100%;
+}
+.content p{
+    padding-left: 0;
+}
+.thumbnails img{
+    width: 100%;
+}
+.messages{
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #c2bcbc;
+}
+.mes-writer{
+    width: 100%;
+    float: left;
+}
+.mes-writer p{
+    position: relative;
+    left: -40px;
+    padding-top: 10px;
+}
+.symbol{
+    position: relative;
+    text-align: right;
+    margin-right: 10px;
+   
+    width: 100%;
+}
+.symbol a .symbol-list{
+    display: flex;
+    align-items: center;
+    font-size: 1.8em;
+    margin-top: 5px;
+    color: #8a8787;
+}
+.subscribes{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.channel-logo{
+    float: left;
+    padding: 10px 20px;
+}
+.channel-logo a img{
+    width: 70px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.channel-logo a{
+    color: #111;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    width: fit-content;
+    transition: all .3s ease;
+}
+.subsciptionBtn{
+    margin-right: 20px;
+}
+.subsciptionBtn button{
+    padding: 10px 22px;
+    background: crimson;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-size: 1.2em;
+}
+.subsciptionBtn button:hover{
+    opacity: 0.8;
+}
+.show-more{
+    padding-left: 90px;
+    color: #5a5a5a;
+}
+.show-more p:last-child{
+    color: #111;
+    font-size: 1.2em;
+    padding-top: 20px;
+    border-bottom: 1px solid rgb(179, 174, 174);
+    width: 100%;
+}
+.comments{
+    display: flex;
+    align-items: center;
+    margin: 20px 0 0 90px;
+    padding-bottom: 20px;
+    flex-wrap: wrap;
+}
+.comments img{
+    width: 25px;
+    margin-left: 40px;
+}
+.comments a {
+    color: #000;
+    font-size: 0.9em;
+}
+.comments h2{
+    font-size: 1.1em;
+    color: #000;
+}
+.new-comments{
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+}
+.new-comments img{
+    width: 40px;
+    border-radius: 50%;
+}
+.new-comments input{
+    width: 100%;
+    margin-left: 10px;
+    padding: 10px 0;
+    color: #5a5a5a;
+    font-size: 0.9em;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgb(179, 174, 174);
+}
+.new-comments input:focus{
+    border-bottom: 1px solid rgb(15, 15, 15);
+}
+.cancel-comment-btn{
+    float: right;
+    margin-right: 20px;
+    padding: 20px;
+}
+.cancel-comment-btn button{
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    margin-left: 10px;
+    font-size: 1em;
+    color: #5a5a5a;
+    opacity: 0.8;
+
+}
+.cancel-comment-btn button:hover{
+    opacity: 1;
+}
+.old-comments{
+    margin-left: 30px;
+    margin-top: 60px;
+}
+.old-comments a {
+    display: flex;
+    align-items: center;
+}
+.old-comments p{
+    padding-left: 20px;
+    color: #111;
+    font-size: 1.1em;
+}
+.old-comments h4{
+    margin-left: 60px;
+    color: rgb(78, 75, 75);
+    font-size: 1em;
+}
+.old-comments ion-icon{
+    font-size: 1.3em;
+    padding-top: 10px;
+    position: relative;
+    left: 50px;
+    margin: 0 10px;
+}
+.old-comments img{
+    width: 40px;
+    border-radius: 50%;
+}
+
+/* mobile */
+
+@media (max-width:900px){
+    .sidebar{
+        display: none;
+    }
+    .container{
+        position: relative;
+        top: 70px;
+    }
+    .container, .large-container{
+        padding-top: 2%;
+        padding-left: 2%;
+        margin: auto;
+    }
+    .right-side img{
+        display: none;
+    }
+    .right-side .user-icon{
+        display: block;
+        width: 40px;
+    }
+    .middle-side .searchbar{
+        width: 220px;
+    }
+    .middle-side .search{
+        padding: 3px 3px;
+        
+    }
+    .middle-side .voice{
+        display: none;
+    }
+    .middle-side .searchbar input{
+        width: 220px;
+        padding: 3.2px;
+    }
+    .left-side .logo img{
+        width: 80px;
+        height: 40px;
+    }
+    .left-side ion-icon{
+        display: none;
+    }
+    .subsciptionBtn button{
+        padding: 10px;
+        font-size: 1.1em;
+    }
+    .channel-logo a img{
+        width: 40px;
+    }
+    .channel-logo p{
+        font-size: 0.8em;
+    }
+    .cancel-comment-btn button{
+        padding: 8px;
+    }
+    .thumbnails{
+        width: 100%;
+    }
+}
+
+
+@media (max-width:480px){
+    .left-side .logo img{
+        width: 55px;
+        height: 40px;
+    }
+    .middle-side .searchbar input{
+        width: 120px;
+        padding: 3.2px;
+    }
+    .middle-side .searchbar{
+        width: 120px;
+    }
+}
